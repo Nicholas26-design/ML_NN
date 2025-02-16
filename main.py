@@ -1,16 +1,15 @@
-# This is a sample Python script.
+import subprocess
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# See the STEPS markdown for a detailed explanation on why the given order is what it is.
+
+def run_script(script_name):
+    result = subprocess.run(['python', script_name], capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"Error running {script_name}: {result.stderr}")
+    else:
+        print(f"Successfully ran {script_name}: {result.stdout}")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    run_script('install_requirements.py')
+    run_script('install_datasets.py')
