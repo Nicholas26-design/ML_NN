@@ -1,13 +1,22 @@
 
 
+import os
 import pandas as pd
 import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.impute import SimpleImputer
 
+
+
+
+
+
+
 # Load your dataset
-data = pd.read_csv(r'C:\\Users\\NicholasKenney\\PycharmProjects\\Key2_Blog\\datasets\\ad-click-prediction-dataset\\versions\\5\\ad_click_dataset.csv')
+script_dir = os.path.dirname(__file__)  # Directory of the script being run
+data_path = os.path.join(script_dir, 'datasets\\ad-click-prediction-dataset\\ad_click_dataset.csv')
+data = pd.read_csv(data_path)
 
 
 # Step 1: Select relevant features for clustering

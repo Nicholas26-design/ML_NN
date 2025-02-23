@@ -12,6 +12,11 @@ Given the information at hand, who is most likely to click on the ad?
 What ads are most effective?
 """
 
-# Loaded variable 'df' from URI: c:\Users\NicholasKenney\PycharmProjects\Key2_Blog\EncodedData.csv
 import pandas as pd
-df = pd.read_csv(r'c:\\Users\\NicholasKenney\\PycharmProjects\\Key2_Blog\\EncodedData.csv')
+import os
+
+# Load your dataset
+script_dir = os.path.dirname(__file__)  # Directory of the script being run
+data_path = os.path.join(script_dir, 'EncodedData.csv')
+df = pd.read_csv(data_path)
+print(df.head(10))

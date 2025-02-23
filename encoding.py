@@ -4,11 +4,13 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
 import pandas as pd
 import numpy as np
+import os
 
 
 # Load your dataset
-df = pd.read_csv(r'C:\\Users\\NicholasKenney\\PycharmProjects\\Key2_Blog\\imputed_categorical_dataset.csv')
-
+script_dir = os.path.dirname(__file__)  # Directory of the script being run
+data_path = os.path.join(script_dir, 'imputed_categorical_dataset.csv')
+df = pd.read_csv(data_path)
 
 
 # Data encoding function
@@ -44,5 +46,6 @@ df_scaled = scale_features(df_encoded)
 # Output results
 print("Encoded Data:")
 print(df_scaled.head())
-df_scaled.to_csv('C:\\Users\\NicholasKenney\\PycharmProjects\\Key2_Blog\\EncodedData.csv')
+data_path = os.path.join(script_dir, 'EncodedData.csv')
+df_scaled.to_csv(data_path)
 
