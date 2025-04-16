@@ -17,6 +17,6 @@ import os
 
 # Load your dataset
 script_dir = os.path.dirname(__file__)  # Directory of the script being run
-data_path = os.path.join(script_dir, 'EncodedData.csv')
+data_path = os.path.join(script_dir, '../datasets/EncodedData.csv')
 df = pd.read_csv(data_path)
 print(df.head(10))

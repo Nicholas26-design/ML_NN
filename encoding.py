@@ -1,4 +1,3 @@
-
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
@@ -9,7 +8,7 @@ import os
 
 # Load your dataset
 script_dir = os.path.dirname(__file__)  # Directory of the script being run
-data_path = os.path.join(script_dir, 'imputed_categorical_dataset.csv')
+data_path = os.path.join(script_dir, '../datasets/imputed_categorical_dataset.csv')
 df = pd.read_csv(data_path)
 
 
@@ -46,6 +45,6 @@ df_scaled = scale_features(df_encoded)
 # Output results
 print("Encoded Data:")
 print(df_scaled.head())
-data_path = os.path.join(script_dir, 'EncodedData.csv')
+data_path = os.path.join(script_dir, '../datasets/EncodedData.csv')
 df_scaled.to_csv(data_path)
 

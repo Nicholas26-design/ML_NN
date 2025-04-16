@@ -1,5 +1,3 @@
-
-
 import os
 import pandas as pd
 import numpy as np
@@ -15,7 +13,7 @@ from sklearn.impute import SimpleImputer
 
 # Load your dataset
 script_dir = os.path.dirname(__file__)  # Directory of the script being run
-data_path = os.path.join(script_dir, 'datasets\\ad-click-prediction-dataset\\ad_click_dataset.csv')
+data_path = os.path.join(script_dir, '../datasets/ad-click-prediction-dataset/ad_click_dataset.csv')
 data = pd.read_csv(data_path)
 
 
